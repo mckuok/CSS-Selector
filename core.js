@@ -126,7 +126,7 @@ function getClassPath(element) {
     if (entry === "html") {
       break;
     }
-    if (elm.className && elm.className instanceof String) {
+    if (elm.className && typeof elm.className === "string") {
       entry += "." + elm.className.trim().replace(/ +(?= )/g, '').replace(/ /g, '.');
     }
     parents.push(entry);
