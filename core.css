@@ -1,0 +1,26 @@
+.crx_id_selector {
+  background-color: #ffe6e6 !important;
+  outline: 1px solid #ff0000 !important;
+}
+
+.crx_same_selectors {
+  background-color: #cce5ff !important;
+  outline: 1px solid #0000ff !important;
+}
+
+.crx_initial_same_selectors {
+  background-color: #66b0ff !important;
+  outline: 1px solid #0000ff !important;
+}
+
+#crx_sidebar {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    height: 70px;
+    background: white;
+    z-index: 2000000000;             
+    font-size: 14px;
+    border-top: thick double;
+}
+
