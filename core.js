@@ -9,7 +9,7 @@ const ID_PREFIX = 'ID = ';
 const SELECTOR_PREFIX = 'Selector = ';
 
 const LINE_LENGTH = 160;
-const LINE_HEIGHT = 15;
+const LINE_HEIGHT = 40;
 
 // Previous dom, that we want to track, so we can remove the previous styling.
 var prevDOM = null;
@@ -48,7 +48,7 @@ document.addEventListener('mousemove', function (e) {
     $('#'+SIDEBAR_ID).css('height', linesheight + 'px');
   }
 
-  document.execCommand('copy');
+  
 
   /*Reset DOM */
   if (prevDOM != null) {
@@ -85,7 +85,11 @@ document.addEventListener('copy', function(e) {
 });
 
 
-
+$(window).keydown(function(e){
+  if (e.shiftKey) {
+    document.execCommand('copy');
+  }      
+});
 
 /*Handle requests from background.html*/
 function handleRequest(request,  sender, sendResponse) {
@@ -122,7 +126,7 @@ function getClassPath(element) {
     if (entry === "html") {
       break;
     }
-    if (elm.className) {
+    if (elm.className && elm.className instanceof String) {
       entry += "." + elm.className.trim().replace(/ +(?= )/g, '').replace(/ /g, '.');
     }
     parents.push(entry);
